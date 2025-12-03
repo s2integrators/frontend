@@ -1,4 +1,5 @@
 /* filepath: src/index.css  <-- ensure these are at the top of this file */
+/* filepath: src/index.css  <-- ensure these are at the top of this file */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,3 +17,43 @@
   .input { @apply bg-white border border-[var(--border)] rounded-xl px-3 py-2 text-sm; }
   .tag { @apply bg-slate-100 border border-[var(--border)] rounded-full px-3 py-1 text-xs text-slate-700; }
 }
+/* src/index.css - global site styles, must be imported in index.tsx */
+:root {
+  --bg-deep: #020816;
+}
+
+/* full reset for page-level whitespace + stable dark fallback */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-deep) !important; /* solid fallback so gradients never show white */
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* prevent horizontal overflow that reveals page background */
+}
+
+/* utility: full viewport wrapper when needed */
+.app-fullscreen {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: var(--bg-deep);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Tailwind's preflight or other resets may set body margin; this forces zero */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* optional: ensure root scrollbars don't cause light gutter (if you use a light scrollbar style somewhere) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+

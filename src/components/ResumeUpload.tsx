@@ -22,7 +22,7 @@ export default function ResumeUpload() {
       if (mode === "full") {
         const parsed = extractParsedFromPipeline(resp);
         try { await ResumesAPI.create(parsed); } catch (e) { console.warn("DB save failed:", e); }
-        const questions = resp?.pipeline_results?.interview_questions || null;
+        const questions = (resp?.pipeline_results as any)?.interview_questions || null;
         if (questions) window.dispatchEvent(new CustomEvent("questions:update", { detail: questions }));
       }
 
