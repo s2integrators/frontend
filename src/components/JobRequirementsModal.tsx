@@ -1,7 +1,7 @@
 // ---------- File: src/components/JobRequirementsModal.tsx
 import React, { useEffect, useState } from "react";
-import { EducationLevel, JobRequirements } from "@/types";
-import { JobsAPI } from "@/services/http";
+import { EducationLevel, JobRequirements } from "../types";
+import { JobsAPI } from "../services/http";
 
 type Props = {
   open: boolean;

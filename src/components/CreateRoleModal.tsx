@@ -1,7 +1,7 @@
 
 // filepath: src/components/CreateRoleModal.tsx
 import React, { useEffect, useMemo, useState } from "react";
-import type { JobRequirements } from "@/services/http";
+import type { JobRequirements } from "../types";
 
 type Props = {
   open: boolean;

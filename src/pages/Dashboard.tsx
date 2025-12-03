@@ -1,14 +1,14 @@
 // filepath: src/pages/Dashboard.tsx
 import React, { useEffect, useMemo, useState } from "react";
-import CandidateCard from "@/components/CandidateCard";
-import UploadModal from "@/components/UploadModal";
-import ResumeUpload from "@/components/ResumeUpload";
-import QuestionsPanel from "@/components/QuestionsPanel";
-import { JobsAPI, ResumesAPI } from "@/services/http"; // keep your existing http.ts
-import type { JobRequirements, ResumeRecord } from "@/services/http";
-import MatchAPI, { toPercent } from "@/services/match";
-import { apiBase } from "@/services/env";
-import CreateRoleModal from "@/components/CreateRoleModal";
+import CandidateCard from "../components/CandidateCard";
+import UploadModal from "../components/UploadModal";
+import ResumeUpload from "../components/ResumeUpload";
+import QuestionsPanel from "../components/QuestionsPanel";
+import { JobsAPI, ResumesAPI } from "../services/http"; // keep your existing http.ts
+import type { JobRequirements, ResumeRecord } from "../services/http";
+import MatchAPI, { toPercent } from "../services/match";
+import { apiBase } from "../services/env";
+import CreateRoleModal from "../components/CreateRoleModal";
 
 // --- PROFESSIONAL THEME CONSTANTS ---
 const PRIMARY_ACCENT = "#007B80"; // Deep Teal
@@ -29,7 +29,7 @@ type Person = {
   education: number;
   raw_text: string;
   bestRoleTitle?: string | null;
-  breakdown?: import("@/services/match").MatchBreakdown | null;
+  breakdown?: import("../services/match").MatchBreakdown | null;
   details?: Record<string, number> | null;
 };
 

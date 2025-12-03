@@ -1,6 +1,6 @@
 // filepath: src/pages/Resumes.tsx
 import React, { useRef, useState } from "react";
-import { uploadResume, type UploadMode, type UploadResponse } from "@/services/http";
+import { uploadResume, type UploadMode, type UploadResponse } from "../services/http";
 
 export default function Resumes() {
   const inputRef = useRef<HTMLInputElement | null>(null);

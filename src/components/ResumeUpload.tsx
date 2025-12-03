@@ -2,7 +2,7 @@
 // filepath: src/components/ResumeUpload.tsx  (replace file)
 // ============================================================================
 import React, { useState } from "react";
-import { uploadResumeXHR, extractParsedFromPipeline, ResumesAPI } from "@/services/http";
+import { uploadResumeXHR, extractParsedFromPipeline, ResumesAPI } from "../services/http";
 
 export default function ResumeUpload() {
   const [file, setFile] = useState<File | null>(null);
